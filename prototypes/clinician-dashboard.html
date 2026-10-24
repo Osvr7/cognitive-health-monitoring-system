@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognitive Health Monitoring Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #EEF4FB; }
+        .effat-blue { color: #0C3A6B; }
+        .bg-effat-blue { background-color: #0C3A6B; }
+        .glass-card { background: rgba(255, 255, 255, 0.95); border-radius: 16px; box-shadow: 0 4px 20px rgba(12, 58, 107, 0.08); border: 1px solid rgba(255,255,255,0.5); }
+    </style>
+</head>
+<body class="text-slate-800 flex h-screen overflow-hidden">
+
+    <aside class="w-64 bg-effat-blue text-white flex flex-col justify-between hidden md:flex rounded-r-3xl shadow-2xl z-10">
+        <div>
+            <div class="p-8 flex items-center gap-3">
+                <i class="fa-solid fa-brain text-3xl text-blue-300"></i>
+                <h1 class="text-xl font-bold tracking-wide">CogMonitor</h1>
+            </div>
+            <nav class="mt-6 px-4 space-y-2">
+                <a href="#" class="flex items-center gap-4 px-4 py-3 bg-white/10 rounded-xl font-medium transition hover:bg-white/20"><i class="fa-solid fa-chart-pie w-5"></i> Dashboard</a>
+                <a href="#" class="flex items-center gap-4 px-4 py-3 text-blue-200 rounded-xl font-medium transition hover:bg-white/10 hover:text-white"><i class="fa-solid fa-users w-5"></i> Patients</a>
+                <a href="#" class="flex items-center gap-4 px-4 py-3 text-blue-200 rounded-xl font-medium transition hover:bg-white/10 hover:text-white"><i class="fa-solid fa-bell w-5"></i> Alerts <span class="bg-red-500 text-xs py-1 px-2 rounded-full ml-auto">3</span></a>
+                <a href="#" class="flex items-center gap-4 px-4 py-3 text-blue-200 rounded-xl font-medium transition hover:bg-white/10 hover:text-white"><i class="fa-solid fa-file-medical w-5"></i> Reports</a>
+            </nav>
+        </div>
+        <div class="p-6">
+            <a href="#" class="flex items-center gap-4 px-4 py-3 text-blue-200 rounded-xl font-medium transition hover:bg-white/10 hover:text-white"><i class="fa-solid fa-gear w-5"></i> Settings</a>
+        </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col h-screen overflow-y-auto">
+        <header class="px-10 py-8 flex justify-between items-center">
+            <div>
+                <h2 class="text-3xl font-bold effat-blue">Clinical Dashboard</h2>
+                <p class="text-slate-500 mt-1">Welcome back, Dr. Passent. You have 3 pending alerts.</p>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="relative">
+                    <i class="fa-solid fa-search absolute left-4 top-3.5 text-slate-400"></i>
+                    <input type="text" placeholder="Search patients..." class="pl-11 pr-4 py-3 rounded-full w-72 border-none shadow-sm focus:ring-2 focus:ring-[#0C3A6B] outline-none text-sm">
+                </div>
+                <div class="w-12 h-12 rounded-full bg-effat-blue text-white flex items-center justify-center text-lg font-bold shadow-md cursor-pointer hover:opacity-90 transition">
+                    DP
+                </div>
+            </div>
+        </header>
+
+        <div class="px-10 pb-10 flex-1">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <div class="lg:col-span-1 space-y-8">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="glass-card p-6">
+                            <p class="text-sm text-slate-500 font-medium">Active Monitored</p>
+                            <h3 class="text-3xl font-bold effat-blue mt-2">1,248</h3>
+                        </div>
+                        <div class="glass-card p-6">
+                            <p class="text-sm text-slate-500 font-medium">Daily Syncs</p>
+                            <h3 class="text-3xl font-bold text-emerald-500 mt-2">99.8%</h3>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-0 overflow-hidden border-red-100">
+                        <div class="bg-red-50 px-6 py-4 border-b border-red-100 flex justify-between items-center">
+                            <h4 class="font-bold text-red-700 flex items-center gap-2"><i class="fa-solid fa-triangle-exclamation"></i> Critical Alerts</h4>
+                            <button class="text-red-500 text-sm hover:underline">View All</button>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex gap-4 items-start bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe&background=EF4444&color=fff" class="w-10 h-10 rounded-full">
+                                <div>
+                                    <h5 class="font-bold text-slate-800">Patient ID: #882A</h5>
+                                    <p class="text-xs text-slate-500 mt-1">ClinicalBERT score dropped 18% in 30 days.</p>
+                                    <button class="mt-3 text-xs bg-red-100 text-red-700 px-3 py-1 rounded-md font-medium hover:bg-red-200 transition">Review Data</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 space-y-8">
+                    <div class="glass-card p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <div>
+                                <h4 class="font-bold text-xl effat-blue">Longitudinal Cohort Trend</h4>
+                                <p class="text-sm text-slate-500">5-year semantic degradation analysis</p>
+                            </div>
+                            <select class="bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 text-sm text-slate-700 outline-none">
+                                <option>Last 5 Years</option>
+                                <option>Last 12 Months</option>
+                            </select>
+                        </div>
+                        <div class="w-full h-64 border-l-2 border-b-2 border-slate-300 relative flex items-end justify-between pt-10 px-4">
+                            <div class="absolute -left-8 bottom-0 text-xs text-slate-400">0</div>
+                            <div class="absolute -left-8 top-1/2 text-xs text-slate-400">50</div>
+                            <div class="absolute -left-8 top-0 text-xs text-slate-400">100</div>
+                            
+                            <div class="w-1/6 h-[90%] bg-emerald-400/20 rounded-t border-t-2 border-emerald-500"></div>
+                            <div class="w-1/6 h-[85%] bg-emerald-400/20 rounded-t border-t-2 border-emerald-500"></div>
+                            <div class="w-1/6 h-[70%] bg-blue-400/20 rounded-t border-t-2 border-blue-500"></div>
+                            <div class="w-1/6 h-[65%] bg-blue-400/20 rounded-t border-t-2 border-blue-500"></div>
+                            <div class="w-1/6 h-[40%] bg-red-400/20 rounded-t border-t-2 border-red-500"></div>
+                            
+                            <div class="absolute -bottom-6 w-full flex justify-between text-xs text-slate-400 px-4">
+                                <span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-8">
+                        <h4 class="font-bold text-xl effat-blue mb-4">Recent Daily Syncs</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead>
+                                    <tr class="text-sm text-slate-400 border-b border-slate-200">
+                                        <th class="pb-3 font-medium">Patient ID</th>
+                                        <th class="pb-3 font-medium">Last Sync</th>
+                                        <th class="pb-3 font-medium">Anonymized Logs</th>
+                                        <th class="pb-3 font-medium">Risk Score</th>
+                                        <th class="pb-3 font-medium">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-sm">
+                                    <tr class="border-b border-slate-100 hover:bg-slate-50 transition">
+                                        <td class="py-4 font-semibold effat-blue">#992B</td>
+                                        <td class="py-4 text-slate-600">Today, 00:01 UTC</td>
+                                        <td class="py-4 text-slate-600">42 logs processed</td>
+                                        <td class="py-4 font-bold text-emerald-500">92.4</td>
+                                        <td class="py-4"><span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs">Stable</span></td>
+                                    </tr>
+                                    <tr class="border-b border-slate-100 hover:bg-slate-50 transition">
+                                        <td class="py-4 font-semibold effat-blue">#882A</td>
+                                        <td class="py-4 text-slate-600">Today, 00:05 UTC</td>
+                                        <td class="py-4 text-slate-600">18 logs processed</td>
+                                        <td class="py-4 font-bold text-red-500">68.1</td>
+                                        <td class="py-4"><span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs">Declining</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

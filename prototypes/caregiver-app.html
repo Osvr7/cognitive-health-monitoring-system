@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caregiver Mobile App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .effat-blue { color: #0C3A6B; }
+        .bg-effat-blue { background-color: #0C3A6B; }
+        .phone-frame { width: 390px; height: 844px; background-color: #EEF4FB; border-radius: 40px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); border: 12px solid #1e293b; position: relative; overflow: hidden; }
+        .notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 150px; height: 30px; background-color: #1e293b; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; z-index: 50; }
+        .glass-card { background: rgba(255, 255, 255, 0.95); border-radius: 20px; box-shadow: 0 4px 15px rgba(12, 58, 107, 0.05); border: 1px solid rgba(255,255,255,0.8); }
+    </style>
+</head>
+<body>
+
+    <div class="phone-frame flex flex-col">
+        <div class="notch"></div>
+
+        <header class="pt-14 pb-6 px-6 bg-effat-blue text-white rounded-b-[32px] shadow-md z-10">
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <p class="text-blue-200 text-sm font-medium">Caregiver Portal</p>
+                    <h2 class="text-2xl font-bold">Hello, Osama</h2>
+                </div>
+                <img src="https://ui-avatars.com/api/?name=Osama+A&background=EEF4FB&color=0C3A6B" class="w-12 h-12 rounded-full border-2 border-white/20">
+            </div>
+            
+            <div class="bg-white/10 rounded-2xl p-4 flex items-center justify-between backdrop-blur-sm border border-white/10">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center"><i class="fa-solid fa-user text-white"></i></div>
+                    <div>
+                        <p class="text-xs text-blue-100">Monitoring</p>
+                        <p class="font-bold">Fatima (Mother)</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-down text-white/70 text-sm"></i>
+            </div>
+        </header>
+
+        <main class="flex-1 overflow-y-auto px-6 py-6 pb-24 space-y-5">
+            
+            <div class="bg-red-50 rounded-2xl p-5 border-l-4 border-red-500 shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-16 h-16 bg-red-500/10 rounded-bl-full"></div>
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center"><i class="fa-solid fa-bell"></i></div>
+                    <h3 class="font-bold text-red-700">Action Required</h3>
+                </div>
+                <p class="text-sm text-red-900 mb-4 leading-relaxed">
+                    Fatima's cognitive risk score has dropped by <strong>18%</strong> over the last 30 days. This exceeds the safe threshold.
+                </p>
+                <div class="flex gap-3">
+                    <button class="flex-1 bg-red-600 text-white py-3 rounded-xl font-medium text-sm shadow-sm hover:bg-red-700 transition"><i class="fa-solid fa-phone mr-2"></i> Call Doctor</button>
+                    <button class="flex-1 bg-white text-red-600 border border-red-200 py-3 rounded-xl font-medium text-sm hover:bg-red-50 transition">View Data</button>
+                </div>
+            </div>
+
+            <div class="glass-card p-5">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="font-bold effat-blue">System Status</h3>
+                    <span class="bg-emerald-100 text-emerald-700 text-xs px-2 py-1 rounded-md font-bold uppercase tracking-wider">Sync Active</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-500 text-xl">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold text-slate-700">Last Sync: Today, 00:00 UTC</p>
+                        <p class="text-xs text-slate-500 mt-1">42 posts anonymized and analyzed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-5">
+                <div class="flex justify-between items-end mb-4">
+                    <div>
+                        <p class="text-xs text-slate-500 font-medium uppercase tracking-wide">Current Score</p>
+                        <h3 class="font-bold text-3xl text-slate-800 mt-1">68.1 <span class="text-sm text-red-500 font-medium"><i class="fa-solid fa-arrow-down"></i> 18%</span></h3>
+                    </div>
+                    <button class="text-xs font-semibold text-blue-500 hover:underline">Full History</button>
+                </div>
+                <div class="w-full h-16 flex items-end justify-between gap-1 mt-2">
+                    <div class="w-1/6 bg-emerald-200 h-[90%] rounded-t-sm"></div>
+                    <div class="w-1/6 bg-emerald-200 h-[85%] rounded-t-sm"></div>
+                    <div class="w-1/6 bg-blue-200 h-[80%] rounded-t-sm"></div>
+                    <div class="w-1/6 bg-blue-200 h-[70%] rounded-t-sm"></div>
+                    <div class="w-1/6 bg-red-400 h-[45%] rounded-t-sm shadow-[0_0_10px_rgba(239,68,68,0.5)]"></div>
+                </div>
+            </div>
+
+        </main>
+
+        <nav class="absolute bottom-0 w-full bg-white border-t border-slate-200 px-6 py-4 pb-8 flex justify-between items-center z-20 shadow-[0_-10px_20px_rgba(0,0,0,0.03)]">
+            <a href="#" class="flex flex-col items-center gap-1 text-slate-400 hover:text-[#0C3A6B] transition w-16">
+                <i class="fa-solid fa-house text-lg"></i>
+                <span class="text-[10px] font-medium">Home</span>
+            </a>
+            <a href="#" class="flex flex-col items-center gap-1 text-[#0C3A6B] w-16 relative">
+                <div class="absolute -top-1 right-3 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></div>
+                <i class="fa-solid fa-bell text-lg"></i>
+                <span class="text-[10px] font-bold">Alerts</span>
+            </a>
+            <a href="#" class="flex flex-col items-center gap-1 text-slate-400 hover:text-[#0C3A6B] transition w-16">
+                <i class="fa-solid fa-chart-line text-lg"></i>
+                <span class="text-[10px] font-medium">Trends</span>
+            </a>
+            <a href="#" class="flex flex-col items-center gap-1 text-slate-400 hover:text-[#0C3A6B] transition w-16">
+                <i class="fa-solid fa-gear text-lg"></i>
+                <span class="text-[10px] font-medium">Settings</span>
+            </a>
+        </nav>
+    </div>
+
+</body>
+</html>
